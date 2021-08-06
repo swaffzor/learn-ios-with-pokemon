@@ -57,9 +57,15 @@ final class PokeViewController: UICollectionViewController {
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        getPokemon()
     }
+    
     @IBAction func fetch(_ sender: UIButton) {
-        let baseUrl = searches.last?.next ?? URL(string: "https://www.pokeapi.co/api/v2/pokemon")
+        getPokemon()
+    }
+    
+    func getPokemon() {
+        let baseUrl = searches.last?.next ?? URL(string: "https://www.pokeapi.co/api/v2/pokemon?limit=50")
         guard let baseUrl = baseUrl else {
             return
         }

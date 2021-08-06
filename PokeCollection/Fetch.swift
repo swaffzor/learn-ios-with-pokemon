@@ -9,11 +9,7 @@ import Foundation
 
 func fetchPaginatedData(url: URL, completionHandler: @escaping (PokemonPaginated) ->  Void) {
     
-    var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-//    components?.queryItems = [
-//        URLQueryItem(name: "limit", value: "60"),
-//        URLQueryItem(name: "offset", value: "60")
-//    ]
+    let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
     guard let resultURL = components?.url?.absoluteURL else {return}
     
     let task = URLSession.shared.dataTask(with: resultURL) { data, response, error in
