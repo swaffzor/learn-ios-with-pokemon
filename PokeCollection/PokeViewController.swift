@@ -28,6 +28,22 @@ final class PokeViewController: UICollectionViewController {
             }
         }
     }
+    private var pokemonList: [Pokemon] = [] {
+        willSet {
+            for poke in newValue {
+                if (!poke.imageLoaded) {
+                    guard let url = URL(string: poke.sprite) else {return}
+                    fetchImage(url: url, completionHandler: { data in
+                        poke.image = data
+                        poke.imageLoaded = true
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    })
+                }
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
