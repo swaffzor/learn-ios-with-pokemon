@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFC7505D26BD48D300257346 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7505C26BD48D300257346 /* DetailsViewController.swift */; };
 		AFD293B126BC72BE00D4A0D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293B026BC72BE00D4A0D4 /* AppDelegate.swift */; };
 		AFD293B326BC72BE00D4A0D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293B226BC72BE00D4A0D4 /* SceneDelegate.swift */; };
 		AFD293B526BC72BE00D4A0D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293B426BC72BE00D4A0D4 /* ViewController.swift */; };
 		AFD293B826BC72BE00D4A0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD293B626BC72BE00D4A0D4 /* Main.storyboard */; };
 		AFD293BA26BC72C200D4A0D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD293B926BC72C200D4A0D4 /* Assets.xcassets */; };
 		AFD293BD26BC72C200D4A0D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD293BB26BC72C200D4A0D4 /* LaunchScreen.storyboard */; };
+		AFD293C526BC739D00D4A0D4 /* PokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293C426BC739D00D4A0D4 /* PokeViewController.swift */; };
+		AFD293C726BC748C00D4A0D4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293C626BC748C00D4A0D4 /* Model.swift */; };
+		AFD293C926BC74B000D4A0D4 /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293C826BC74B000D4A0D4 /* Fetch.swift */; };
+		AFD293CB26BC775C00D4A0D4 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD293CA26BC775C00D4A0D4 /* PokeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AFC7505C26BD48D300257346 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		AFD293AD26BC72BE00D4A0D4 /* PokeCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD293B026BC72BE00D4A0D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD293B226BC72BE00D4A0D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		AFD293B926BC72C200D4A0D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFD293BC26BC72C200D4A0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFD293BE26BC72C200D4A0D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFD293C426BC739D00D4A0D4 /* PokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeViewController.swift; sourceTree = "<group>"; };
+		AFD293C626BC748C00D4A0D4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AFD293C826BC74B000D4A0D4 /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
+		AFD293CA26BC775C00D4A0D4 /* PokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				AFD293B226BC72BE00D4A0D4 /* SceneDelegate.swift */,
 				AFD293B426BC72BE00D4A0D4 /* ViewController.swift */,
 				AFD293B626BC72BE00D4A0D4 /* Main.storyboard */,
+				AFC7505C26BD48D300257346 /* DetailsViewController.swift */,
+				AFD293C626BC748C00D4A0D4 /* Model.swift */,
+				AFD293C826BC74B000D4A0D4 /* Fetch.swift */,
+				AFD293C426BC739D00D4A0D4 /* PokeViewController.swift */,
+				AFD293CA26BC775C00D4A0D4 /* PokeCell.swift */,
 				AFD293B926BC72C200D4A0D4 /* Assets.xcassets */,
 				AFD293BB26BC72C200D4A0D4 /* LaunchScreen.storyboard */,
 				AFD293BE26BC72C200D4A0D4 /* Info.plist */,
@@ -137,7 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD293C926BC74B000D4A0D4 /* Fetch.swift in Sources */,
+				AFD293C726BC748C00D4A0D4 /* Model.swift in Sources */,
 				AFD293B526BC72BE00D4A0D4 /* ViewController.swift in Sources */,
+				AFC7505D26BD48D300257346 /* DetailsViewController.swift in Sources */,
+				AFD293C526BC739D00D4A0D4 /* PokeViewController.swift in Sources */,
+				AFD293CB26BC775C00D4A0D4 /* PokeCell.swift in Sources */,
 				AFD293B126BC72BE00D4A0D4 /* AppDelegate.swift in Sources */,
 				AFD293B326BC72BE00D4A0D4 /* SceneDelegate.swift in Sources */,
 			);
