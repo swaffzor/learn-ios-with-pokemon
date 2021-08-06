@@ -7,10 +7,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+final class PokeViewController: UICollectionViewController {
 
-class PokeViewController: UICollectionViewController {
-
+    private let reuseIdentifier = "PokeCell"
+    private let sectionInsets = UIEdgeInsets(
+      top: 50.0,
+      left: 20.0,
+      bottom: 50.0,
+      right: 20.0
+    )
     override func viewDidLoad() {
         super.viewDidLoad()
 
