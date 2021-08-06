@@ -93,6 +93,8 @@ final class PokeViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PokeCollectionCell
         
+            cell.imageView.image = UIImage(data: pokemonList[indexPath.row].image ?? Data())
+        
         // Configure the cell
     
         return cell
