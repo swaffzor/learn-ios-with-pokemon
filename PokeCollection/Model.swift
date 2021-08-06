@@ -105,6 +105,7 @@ class Pokemon {
     var sprite = ""
     var image: Data?
     var imageLoaded = false
+    var stats: [PokeStat]?
     
     init(pokemon: Pokemon) {
         self.imageLoaded = false
@@ -134,6 +135,7 @@ class Pokemon {
         self.order = pokemon.order
         self.weight = pokemon.weight
         self.sprite = pokemon.sprites.front_default ?? ""
+        self.stats = pokemon.stats
     }
 }
 
