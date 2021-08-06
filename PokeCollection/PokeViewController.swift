@@ -16,6 +16,18 @@ final class PokeViewController: UICollectionViewController {
       bottom: 50.0,
       right: 20.0
     )
+    private var searches: [PokemonPaginated] = [] {
+        willSet {
+//            newValue.last?.results.map{poke in
+            guard let pokemons = newValue.last?.results else {return}
+            for poke in pokemons {
+                fetchPokemonCells(url: poke.url, completionHandler: {pokeData in
+                    self.pokemonList.append(pokeData)
+                    self.pokemonList.sort{ $0.id < $1.id }
+                })
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
