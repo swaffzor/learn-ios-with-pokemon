@@ -56,6 +56,19 @@ final class PokeViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func fetch(_ sender: UIButton) {
+        let baseUrl = searches.last?.next ?? URL(string: "https://www.pokeapi.co/api/v2/pokemon")
+        guard let baseUrl = baseUrl else {
+            return
+        }
+        fetchPaginatedData(url: baseUrl, completionHandler: {paginatedData in
+            self.searches.append(paginatedData)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        })
+    }
+    
     /*
     // MARK: - Navigation
 
