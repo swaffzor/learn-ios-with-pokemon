@@ -10,12 +10,14 @@ import UIKit
 final class PokeViewController: UICollectionViewController {
 
     private let reuseIdentifier = "PokeCell"
+    private let itemsPerRow: CGFloat = 3
     private let sectionInsets = UIEdgeInsets(
       top: 50.0,
       left: 20.0,
       bottom: 50.0,
       right: 20.0
     )
+    
     private var searches: [PokemonPaginated] = [] {
         willSet {
 //            newValue.last?.results.map{poke in
@@ -44,6 +46,7 @@ final class PokeViewController: UICollectionViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +58,6 @@ final class PokeViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
     @IBAction func fetch(_ sender: UIButton) {
         let baseUrl = searches.last?.next ?? URL(string: "https://www.pokeapi.co/api/v2/pokemon")
         guard let baseUrl = baseUrl else {
@@ -131,4 +133,39 @@ final class PokeViewController: UICollectionViewController {
     }
     */
 
+}
+
+// MARK: - Collection View Flow Layout Delegate
+extension PokeViewController: UICollectionViewDelegateFlowLayout {
+  // 1
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    // 2
+    let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+    let availableWidth = view.frame.width - paddingSpace
+    let widthPerItem = availableWidth / itemsPerRow
+    
+    return CGSize(width: widthPerItem, height: widthPerItem)
+  }
+  
+  // 3
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    insetForSectionAt section: Int
+  ) -> UIEdgeInsets {
+    return sectionInsets
+  }
+  
+  // 4
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
+    return sectionInsets.left
+  }
 }
