@@ -7,6 +7,7 @@
 
 import UIKit
 
-class PokeCell: UICollectionViewCell {
+class PokeCollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
 }
